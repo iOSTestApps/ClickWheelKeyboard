@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "CWIntroViewController.h"
+#import <BuddyBuildSDK/BuddyBuildSDK.h>
 
 @interface AppDelegate () {
   CWIntroViewController *_introViewController;
@@ -19,6 +20,8 @@
 @implementation AppDelegate
             
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  [BuddyBuildSDK setup];
+  
   _introViewController = [[CWIntroViewController alloc] init];
   
   _rootViewController = [[UINavigationController alloc] initWithRootViewController:_introViewController];
